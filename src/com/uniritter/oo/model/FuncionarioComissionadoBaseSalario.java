@@ -6,9 +6,9 @@ public class FuncionarioComissionadoBaseSalario extends FuncionarioComissionado 
     public FuncionarioComissionadoBaseSalario() {
     }
 
-    public FuncionarioComissionadoBaseSalario(String nome, String cpf) {
-        super(nome, cpf);
-        this.salario = getSalario();
+    public FuncionarioComissionadoBaseSalario(String nome, String cpf, Integer horasTrabalhadas, Double salario, Double taxaDeComissao) {
+        super(nome, cpf, horasTrabalhadas, taxaDeComissao);
+        this.salario = salario;
     }
 
     public Double getSalario() {
@@ -20,8 +20,9 @@ public class FuncionarioComissionadoBaseSalario extends FuncionarioComissionado 
     }
 
     @Override
-    public double getRendimentos() {
-        return salario+super.getRendimentos();
+    public Double getRendimentos() {
+    	setRendimentos(salario + super.getRendimentos());
+        return rendimentos;
     }
 
     @Override

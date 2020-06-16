@@ -7,10 +7,9 @@ public class FuncionarioComissionado extends Funcionario {
     public FuncionarioComissionado() {
     }
 
-    public FuncionarioComissionado(String nome, String cpf) {
-        super(nome, cpf);
-        this.vendasBrutas = getVendasBrutas();
-        this.taxaDeComissao = getTaxaDeComissao();
+    public FuncionarioComissionado(String nome, String cpf, Integer horasTrabalhadas, Double taxaDeComissao ) {
+        super(nome, cpf, horasTrabalhadas);     
+        this.taxaDeComissao = taxaDeComissao;
     }
 
     public Double getVendasBrutas() {
@@ -29,7 +28,11 @@ public class FuncionarioComissionado extends Funcionario {
         this.taxaDeComissao = taxaDeComissao;
     }
 
-    public double getRendimentos(){ return vendasBrutas * taxaDeComissao; }
+    @Override
+    public Double getRendimentos(){ 
+    	setRendimentos(vendasBrutas * taxaDeComissao);
+    	return rendimentos; 
+    }
 
     @Override
     public String toString() {

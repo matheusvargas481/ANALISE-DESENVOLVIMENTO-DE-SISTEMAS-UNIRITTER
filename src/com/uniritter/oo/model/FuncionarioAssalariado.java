@@ -6,9 +6,9 @@ public class FuncionarioAssalariado extends Funcionario {
     public FuncionarioAssalariado() {
     }
 
-    public FuncionarioAssalariado(String nome, String cpf) {
-        super(nome, cpf);
-        this.salario = getSalario();
+    public FuncionarioAssalariado(String nome, String cpf,Integer horasTrabalhadas, Double salario) {
+        super(nome, cpf, horasTrabalhadas);
+        this.salario = salario;
     }
 
     public Double getSalario() {
@@ -19,8 +19,10 @@ public class FuncionarioAssalariado extends Funcionario {
         this.salario = salario;
     }
 
-    public double getRendimentos() {
-        return salario;
+    @Override
+    public Double getRendimentos() {
+    	setRendimentos(salario);
+        return rendimentos;
     }
 
     @Override
@@ -29,6 +31,7 @@ public class FuncionarioAssalariado extends Funcionario {
                 +"FuncionarioAssalariado "  +"\n"
                 + "Nome: " + nome +"\n"
                 + "Cpf: " + cpf +"\n"
-                + "Salario: " + salario +"\n";
+                + "Salario: " + salario +"\n"
+                + "Rendimentos: " + getRendimentos()+"\n";
     }
 }

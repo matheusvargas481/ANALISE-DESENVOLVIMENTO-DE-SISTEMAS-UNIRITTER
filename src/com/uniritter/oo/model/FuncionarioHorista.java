@@ -1,19 +1,19 @@
 package com.uniritter.oo.model;
 
 public class FuncionarioHorista extends Funcionario {
+	
     private int horasTrabalhadas = 0;
     private Double valorPorHora = 0.0;
 
     public FuncionarioHorista() {
     }
 
-    public FuncionarioHorista(String nome, String cpf) {
+    public FuncionarioHorista(String nome, String cpf, Double valorPorHora) {
         super(nome, cpf);
-        this.horasTrabalhadas = getHorasTrabalhadas();
-        this.valorPorHora = getValorPorHora();
+        this.valorPorHora = valorPorHora;
     }
 
-    public int getHorasTrabalhadas() {
+    public Integer getHorasTrabalhadas() {
         return horasTrabalhadas;
     }
 
@@ -24,23 +24,19 @@ public class FuncionarioHorista extends Funcionario {
     public void setHorasTrabalhadas(int horasTrabalhadas) {
         this.horasTrabalhadas = horasTrabalhadas;
     }
-
-    public void setValorPorHora(Double valorPorHora) {
-        this.valorPorHora = valorPorHora;
-    }
-
-    public double getRendimentos(){
+    
+    @Override
+    public Double getRendimentos(){
         return validaRendimento();
     }
 
-    private double validaRendimento(){
-        double rendimentoTotal = 0;
-        if(horasTrabalhadas  < 40){
-            rendimentoTotal = valorPorHora * horasTrabalhadas;
+    private double validaRendimento(){        
+        if(horasTrabalhadas  <= 40){
+            setRendimentos(valorPorHora * horasTrabalhadas);
         }else if (horasTrabalhadas > 40){
-           rendimentoTotal =  40 * valorPorHora + (horasTrabalhadas - 40) * valorPorHora * 1.5;
+        	setRendimentos(40 * valorPorHora + ((horasTrabalhadas - 40) * valorPorHora * 1.5));
         }
-        return rendimentoTotal;
+        return rendimentos;
     }
 
     @Override

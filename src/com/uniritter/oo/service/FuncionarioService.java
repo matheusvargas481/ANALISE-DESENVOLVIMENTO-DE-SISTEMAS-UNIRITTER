@@ -27,34 +27,39 @@ public class FuncionarioService {
         return funcionarios;
     }
 
-    public double calcularRendimentoDoFuncionarioAssalariado(double salario){
-        funcionarioAssalariado.setSalario(salario);
-        return funcionarioAssalariado.getRendimentos(); }
+    public double calcularRendimentoDoFuncionarioAssalariado(){
+        return funcionarioAssalariado.getRendimentos(); 
+        }
 
-    public double calcularRendimentoDoFuncionarioComissionado(double vendasBrutas,double taxaDeComissao){
-        funcionarioComissionado.setVendasBrutas(vendasBrutas);
-        funcionarioComissionado.setTaxaDeComissao(taxaDeComissao);
+    public double calcularRendimentoDoFuncionarioComissionado(double vendasBrutas){
+    	funcionarioComissionado.setVendasBrutas(vendasBrutas);
         return funcionarioComissionado.getRendimentos();
     }
 
-    public double calcularRendimentoDoFuncionarioComissionadoBaseSalario(double salario){
-        funcionarioComissionadoBaseSalario.setSalario(salario);
+    public double calcularRendimentoDoFuncionarioComissionadoBaseSalario(){
         return funcionarioComissionadoBaseSalario.getRendimentos();
     }
 
-    public double calcularRendimentoDoFuncionarioHorista(double valorPorHora, int horasTrabalhadas){
-        funcionarioHorista.setValorPorHora(valorPorHora);
+    public double calcularRendimentoDoFuncionarioHorista(int horasTrabalhadas){
         funcionarioHorista.setHorasTrabalhadas(horasTrabalhadas);
         return funcionarioHorista.getRendimentos();
     }
 
     private double calcularRendimentoDeTodosFuncionarios(){
-      return funcionarioAssalariado.getRendimentos()
-              +funcionarioComissionado.getRendimentos()
-              +funcionarioComissionadoBaseSalario.getRendimentos()
-              +funcionarioHorista.getRendimentos();
+      return funcionarios.stream().mapToDouble(funcionario->funcionario.getRendimentos()).sum();
     }
-    public String showRendimentoTotalDeTodosFuncionarios(){
+    public String mostrarRendimentoTotalDeTodosFuncionarios(){
         return "O rendimento Total de Todos Funcionarios: "+calcularRendimentoDeTodosFuncionarios();
     }
+    
+    public Double calcularValorHoraTrabalhada(String cpf) {
+    	double mediaValorHoraTrabalhada = 0.0;
+    	for(Funcionario funcionario: funcionarios) {
+    		if(funcionario.getCpf().equals(cpf)) {
+    			mediaValorHoraTrabalhada = funcionario.getRendimentos() / funcionario.getHorasTrabalhadas();
+    		} 
+    	}
+    	return mediaValorHoraTrabalhada;
+    }
+  
 }
