@@ -6,7 +6,7 @@ public class FuncionarioAssalariado extends Funcionario {
     public FuncionarioAssalariado() {
     }
 
-    public FuncionarioAssalariado(String nome, String cpf,Integer horasTrabalhadas, Double salario) {
+    public FuncionarioAssalariado(String nome, String cpf, Integer horasTrabalhadas, Double salario) {
         super(nome, cpf, horasTrabalhadas);
         this.salario = salario;
     }

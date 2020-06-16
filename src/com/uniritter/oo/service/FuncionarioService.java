@@ -48,6 +48,15 @@ public class FuncionarioService {
     private double calcularRendimentoDeTodosFuncionarios(){
       return funcionarios.stream().mapToDouble(funcionario->funcionario.getRendimentos()).sum();
     }
+    
+    private double calcularTotalVendasBrutas(){
+        return funcionarios.stream().mapToDouble(funcionario->funcionario.getTotalVendasBrutas()).sum();
+      }
+    
+    public String mostrarTotalDeGastosComRendimentos() {
+    	return "Total de gastos de gastos com rendimentos é: " + (calcularTotalVendasBrutas() - calcularRendimentoDeTodosFuncionarios());
+    }
+    
     public String mostrarRendimentoTotalDeTodosFuncionarios(){
         return "O rendimento Total de Todos Funcionarios: "+calcularRendimentoDeTodosFuncionarios();
     }
@@ -61,5 +70,18 @@ public class FuncionarioService {
     	}
     	return mediaValorHoraTrabalhada;
     }
+    
+    public Double CalcularRendimentoMedio() {
+    	double rendimentoTotal = 0.0;
+    	int numeroDeFuncionarios = 0;
+    	
+    	for(Funcionario funcionario: funcionarios) {    		
+    		rendimentoTotal+= funcionario.getRendimentos();    		
+    		numeroDeFuncionarios++;
+    	}
+    	return rendimentoTotal / numeroDeFuncionarios;
+    }
+    
+    
   
 }

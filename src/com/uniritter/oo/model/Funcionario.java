@@ -5,8 +5,34 @@ public class Funcionario {
     protected String cpf;
     protected Double rendimentos;
     protected Integer horasTrabalhadas;
+    protected Double totalVendasBrutas;
 
-    public String getCpf() {
+    public Funcionario() {
+    }
+    
+    
+    public Funcionario(String nome, String cpf) {
+    	this.nome = nome;
+    	this.cpf = cpf;
+    }
+    
+    public Funcionario(String nome, String cpf, Integer horasTrabalhadas) {
+    	this.nome = nome;
+    	this.cpf = cpf;
+    	this.horasTrabalhadas = horasTrabalhadas;
+    }
+
+	public Double getTotalVendasBrutas() {
+		return totalVendasBrutas;
+	}
+
+
+	public void setTotalVendasBrutas(Double totalVendasBrutas) {
+		this.totalVendasBrutas = totalVendasBrutas;
+	}
+
+
+	public String getCpf() {
 		return cpf;
 	}
 
@@ -18,19 +44,6 @@ public class Funcionario {
 		this.horasTrabalhadas = horasTrabalhadas;
 	}
 
-	public Funcionario() {
-    }
-
-    public Funcionario(String nome, String cpf, Integer horasTrabalhadas) {
-        this.nome = nome;
-        this.cpf = cpf;
-        this.horasTrabalhadas = horasTrabalhadas;
-    }
-    
-    public Funcionario(String nome, String cpf) {
-        this.nome = nome;
-        this.cpf = cpf;
-    }
 
     public Double getRendimentos() {
 		return rendimentos;

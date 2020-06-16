@@ -18,6 +18,12 @@ public class FuncionarioComissionadoBaseSalario extends FuncionarioComissionado 
     public void setSalario(Double salario) {
         this.salario = salario;
     }
+    
+    @Override
+    public void setVendasBrutas(Double vendasBrutas) {
+    	this.vendasBrutas = vendasBrutas;
+    	setTotalVendasBrutas(vendasBrutas);    	
+    }
 
     @Override
     public Double getRendimentos() {

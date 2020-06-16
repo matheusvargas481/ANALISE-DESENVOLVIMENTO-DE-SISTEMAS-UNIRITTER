@@ -1,7 +1,7 @@
 package com.uniritter.oo.model;
 
 public class FuncionarioComissionado extends Funcionario {
-    private Double vendasBrutas = 0.0;
+    protected Double vendasBrutas = 0.0;
     private Double taxaDeComissao = 0.0;
 
     public FuncionarioComissionado() {
@@ -17,6 +17,7 @@ public class FuncionarioComissionado extends Funcionario {
     }
 
     public void setVendasBrutas(Double vendasBrutas) {
+    	setTotalVendasBrutas(vendasBrutas);
         this.vendasBrutas = vendasBrutas;
     }
 
