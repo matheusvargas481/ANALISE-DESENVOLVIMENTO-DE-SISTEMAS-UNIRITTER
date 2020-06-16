@@ -1,8 +1,8 @@
 package com.uniritter.oo.model;
 
 public class FuncionarioHorista extends Funcionario {
-    private int horasTrabalhadas;
-    private double valorPorHora;
+    private int horasTrabalhadas = 0;
+    private Double valorPorHora = 0.0;
 
     public FuncionarioHorista() {
     }

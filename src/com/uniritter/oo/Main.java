@@ -16,6 +16,8 @@ public class Main {
         funcionarioService.cadastrarFuncionario(matheus);
         funcionarioService.cadastrarFuncionario(vargas);
         System.out.println(funcionarioService.listarTodosFuncionarios());
+        System.out.println(funcionarioService.calcularRendimentoDoFuncionarioComissionado());
+        System.out.println(funcionarioService.showRendimentoTotalDeTodosFuncionarios());
 
     }
 }

@@ -1,8 +1,8 @@
 package com.uniritter.oo.model;
 
 public class FuncionarioComissionado extends Funcionario {
-    private double vendasBrutas;
-    private double taxaDeComissao;
+    private Double vendasBrutas = 0.0;
+    private Double taxaDeComissao = 0.0;
 
     public FuncionarioComissionado() {
     }
@@ -13,9 +13,23 @@ public class FuncionarioComissionado extends Funcionario {
         this.taxaDeComissao = taxaDeComissao;
     }
 
-    public double getRendimentos(){
-        return vendasBrutas * taxaDeComissao;
+    public Double getVendasBrutas() {
+        return vendasBrutas;
     }
+
+    public void setVendasBrutas(Double vendasBrutas) {
+        this.vendasBrutas = vendasBrutas;
+    }
+
+    public Double getTaxaDeComissao() {
+        return taxaDeComissao;
+    }
+
+    public void setTaxaDeComissao(Double taxaDeComissao) {
+        this.taxaDeComissao = taxaDeComissao;
+    }
+
+    public double getRendimentos(){ return vendasBrutas * taxaDeComissao; }
 
     @Override
     public String toString() {

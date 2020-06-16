@@ -1,7 +1,7 @@
 package com.uniritter.oo.model;
 
 public class FuncionarioComissionadoBaseSalario extends FuncionarioComissionado {
-    private double salario;
+    private Double salario = 0.0;
 
     public FuncionarioComissionadoBaseSalario() {
     }

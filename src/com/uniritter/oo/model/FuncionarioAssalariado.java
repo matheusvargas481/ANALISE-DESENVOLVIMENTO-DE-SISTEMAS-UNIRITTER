@@ -1,17 +1,17 @@
 package com.uniritter.oo.model;
 
 public class FuncionarioAssalariado extends Funcionario {
-    private double salario;
+    private Double salario = 0.0;
 
     public FuncionarioAssalariado() {
     }
 
-    public FuncionarioAssalariado(double salario) {
+    public FuncionarioAssalariado(String nome, String cpf, double salario) {
+        super(nome, cpf);
         this.salario = salario;
     }
 
-    public FuncionarioAssalariado(String nome, String cpf, double salario) {
-        super(nome, cpf);
+    public void setSalario(Double salario) {
         this.salario = salario;
     }
 
