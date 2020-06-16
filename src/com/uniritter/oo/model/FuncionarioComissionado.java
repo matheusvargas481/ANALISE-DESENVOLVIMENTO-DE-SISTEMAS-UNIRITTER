@@ -7,10 +7,10 @@ public class FuncionarioComissionado extends Funcionario {
     public FuncionarioComissionado() {
     }
 
-    public FuncionarioComissionado(String nome, String cpf, double vendasBrutas, double taxaDeComissao) {
+    public FuncionarioComissionado(String nome, String cpf) {
         super(nome, cpf);
-        this.vendasBrutas = vendasBrutas;
-        this.taxaDeComissao = taxaDeComissao;
+        this.vendasBrutas = getVendasBrutas();
+        this.taxaDeComissao = getTaxaDeComissao();
     }
 
     public Double getVendasBrutas() {

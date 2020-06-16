@@ -13,6 +13,14 @@ public class FuncionarioHorista extends Funcionario {
         this.valorPorHora = valorPorHora;
     }
 
+    public void setHorasTrabalhadas(int horasTrabalhadas) {
+        this.horasTrabalhadas = horasTrabalhadas;
+    }
+
+    public void setValorPorHora(Double valorPorHora) {
+        this.valorPorHora = valorPorHora;
+    }
+
     public double getRendimentos(){
         return validaRendimento();
     }

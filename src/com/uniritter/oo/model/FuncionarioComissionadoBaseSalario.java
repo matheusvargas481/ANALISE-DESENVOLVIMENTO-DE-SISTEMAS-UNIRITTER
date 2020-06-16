@@ -6,8 +6,12 @@ public class FuncionarioComissionadoBaseSalario extends FuncionarioComissionado 
     public FuncionarioComissionadoBaseSalario() {
     }
 
-    public FuncionarioComissionadoBaseSalario(String nome, String cpf, double vendasBrutas, double taxaDeComissao, double salario) {
-        super(nome, cpf, vendasBrutas, taxaDeComissao);
+    public FuncionarioComissionadoBaseSalario(String nome, String cpf) {
+        super(nome, cpf);
+        this.salario = salario;
+    }
+
+    public void setSalario(Double salario) {
         this.salario = salario;
     }
 

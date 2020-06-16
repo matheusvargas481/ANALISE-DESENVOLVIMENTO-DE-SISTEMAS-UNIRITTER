@@ -37,9 +37,16 @@ public class FuncionarioService {
         return funcionarioComissionado.getRendimentos();
     }
 
-    public double calcularRendimentoDoFuncionarioComissionadoBaseSalario(){ return funcionarioComissionadoBaseSalario.getRendimentos();}
+    public double calcularRendimentoDoFuncionarioComissionadoBaseSalario(double salario){
+        funcionarioComissionadoBaseSalario.setSalario(salario);
+        return funcionarioComissionadoBaseSalario.getRendimentos();
+    }
 
-    public double calcularRendimentoDoFuncionarioHorista(){ return funcionarioHorista.getRendimentos();}
+    public double calcularRendimentoDoFuncionarioHorista(double valorPorHora, int horasTrabalhadas){
+        funcionarioHorista.setValorPorHora(valorPorHora);
+        funcionarioHorista.setHorasTrabalhadas(horasTrabalhadas);
+        return funcionarioHorista.getRendimentos();
+    }
 
     private double calcularRendimentoDeTodosFuncionarios(){
       return funcionarioAssalariado.getRendimentos()
