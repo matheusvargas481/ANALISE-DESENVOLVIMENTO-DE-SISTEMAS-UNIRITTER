@@ -6,9 +6,13 @@ public class FuncionarioAssalariado extends Funcionario {
     public FuncionarioAssalariado() {
     }
 
-    public FuncionarioAssalariado(String nome, String cpf, double salario) {
+    public FuncionarioAssalariado(String nome, String cpf) {
         super(nome, cpf);
-        this.salario = salario;
+        this.salario = getSalario();
+    }
+
+    public Double getSalario() {
+        return salario;
     }
 
     public void setSalario(Double salario) {

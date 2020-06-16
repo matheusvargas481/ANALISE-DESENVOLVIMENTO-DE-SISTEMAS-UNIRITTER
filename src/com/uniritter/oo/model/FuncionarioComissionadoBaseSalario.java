@@ -8,7 +8,11 @@ public class FuncionarioComissionadoBaseSalario extends FuncionarioComissionado 
 
     public FuncionarioComissionadoBaseSalario(String nome, String cpf) {
         super(nome, cpf);
-        this.salario = salario;
+        this.salario = getSalario();
+    }
+
+    public Double getSalario() {
+        return salario;
     }
 
     public void setSalario(Double salario) {

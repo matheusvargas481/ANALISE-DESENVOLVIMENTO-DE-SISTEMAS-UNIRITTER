@@ -7,10 +7,18 @@ public class FuncionarioHorista extends Funcionario {
     public FuncionarioHorista() {
     }
 
-    public FuncionarioHorista(String nome, String cpf, int horasTrabalhadas, double valorPorHora) {
+    public FuncionarioHorista(String nome, String cpf) {
         super(nome, cpf);
-        this.horasTrabalhadas = horasTrabalhadas;
-        this.valorPorHora = valorPorHora;
+        this.horasTrabalhadas = getHorasTrabalhadas();
+        this.valorPorHora = getValorPorHora();
+    }
+
+    public int getHorasTrabalhadas() {
+        return horasTrabalhadas;
+    }
+
+    public Double getValorPorHora() {
+        return valorPorHora;
     }
 
     public void setHorasTrabalhadas(int horasTrabalhadas) {

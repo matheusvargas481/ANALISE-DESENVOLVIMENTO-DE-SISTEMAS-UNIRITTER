@@ -17,6 +17,7 @@ public class Main {
         funcionarioService.cadastrarFuncionario(vargas);
         System.out.println(funcionarioService.listarTodosFuncionarios());
         System.out.println(funcionarioService.calcularRendimentoDoFuncionarioComissionado(5000, 0.8));
+        System.out.println(funcionarioService.calcularRendimentoDoFuncionarioComissionadoBaseSalario(5000));
         System.out.println(funcionarioService.showRendimentoTotalDeTodosFuncionarios());
 
     }
