@@ -7,8 +7,9 @@ public class FuncionarioComissionado extends Funcionario {
     public FuncionarioComissionado() {
     }
 
-    public FuncionarioComissionado(String nome, String cpf, Integer horasTrabalhadas, Double taxaDeComissao ) {
+    public FuncionarioComissionado(String nome, String cpf, Integer horasTrabalhadas, Double taxaDeComissao, Double vendasBrutas ) {
         super(nome, cpf, horasTrabalhadas);     
+        this.vendasBrutas = vendasBrutas;
         this.taxaDeComissao = taxaDeComissao;
     }
 

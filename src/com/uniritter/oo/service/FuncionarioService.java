@@ -27,24 +27,6 @@ public class FuncionarioService {
         return funcionarios;
     }
 
-    public double calcularRendimentoDoFuncionarioAssalariado(){
-        return funcionarioAssalariado.getRendimentos(); 
-        }
-
-    public double calcularRendimentoDoFuncionarioComissionado(double vendasBrutas){
-    	funcionarioComissionado.setVendasBrutas(vendasBrutas);
-        return funcionarioComissionado.getRendimentos();
-    }
-
-    public double calcularRendimentoDoFuncionarioComissionadoBaseSalario(){
-        return funcionarioComissionadoBaseSalario.getRendimentos();
-    }
-
-    public double calcularRendimentoDoFuncionarioHorista(int horasTrabalhadas){
-        funcionarioHorista.setHorasTrabalhadas(horasTrabalhadas);
-        return funcionarioHorista.getRendimentos();
-    }
-
     private double calcularRendimentoDeTodosFuncionarios(){
       return funcionarios.stream().mapToDouble(funcionario->funcionario.getRendimentos()).sum();
     }
@@ -58,7 +40,7 @@ public class FuncionarioService {
     }
     
     public String mostrarRendimentoTotalDeTodosFuncionarios(){
-        return "O rendimento Total de Todos Funcionarios: "+calcularRendimentoDeTodosFuncionarios();
+        return "O rendimento Total de Todos Funcionarios: " + calcularRendimentoDeTodosFuncionarios();
     }
     
     public Double calcularValorHoraTrabalhada(String cpf) {
@@ -82,6 +64,18 @@ public class FuncionarioService {
     	return rendimentoTotal / numeroDeFuncionarios;
     }
     
+    public Double calcularRendimentosDeUmFuncionario(String cpf){
+    	double totalRendimentosDeUmFuncionario = 0.0;
+    	String nome = null;
+    	for(Funcionario funcionario: funcionarios) {
+    		if(funcionario.getCpf().equals(cpf)) {
+    			totalRendimentosDeUmFuncionario = funcionario.getRendimentos();
+    			nome = funcionario.getNome();
+    		}
+    	}
+    	System.out.print("Nome: " + nome + " \nRendimentos: ");
+    	return totalRendimentosDeUmFuncionario;
+    }
     
   
 }
