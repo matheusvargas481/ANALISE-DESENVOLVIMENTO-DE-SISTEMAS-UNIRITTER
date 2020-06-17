@@ -54,12 +54,14 @@ public class Funcionario {
         return nome;
     }
 
-
     @Override
     public String toString() {
         return "\n"
                 + "Funcionario " + "\n"
-                + "Nome: " + nome + "\n" +
-                "Cpf: " + cpf + "\n";
+                + "Nome: " + nome + "\n"
+                + "Cpf: " + cpf + "\n"
+                + "Rendimentos: " + rendimentos + "\n"
+                + "Horas Trabalhadas: " + horasTrabalhadas + "\n"
+                + "Total Vendas Brutas: " + totalVendasBrutas + "\n";
     }
 }

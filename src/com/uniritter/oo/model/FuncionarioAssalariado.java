@@ -21,17 +21,18 @@ public class FuncionarioAssalariado extends Funcionario {
 
     @Override
     public Double getRendimentos() {
-    	setRendimentos(salario);
+        setRendimentos(salario);
         return rendimentos;
     }
 
     @Override
     public String toString() {
         return "\n"
-                +"FuncionarioAssalariado "  +"\n"
-                + "Nome: " + nome +"\n"
-                + "Cpf: " + cpf +"\n"
-                + "Salario: " + salario +"\n"
-                + "Rendimentos: " + getRendimentos()+"\n";
+                + "FuncionarioAssalariado " + "\n"
+                + "Nome: " + nome + "\n"
+                + "Cpf: " + cpf + "\n"
+                + "Horas Trabalhadas: " + horasTrabalhadas + "\n"
+                + "Salario: " + salario + "\n"
+                + "Rendimentos: " + getRendimentos() + "\n";
     }
 }

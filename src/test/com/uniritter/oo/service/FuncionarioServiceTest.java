@@ -17,6 +17,7 @@ import static org.junit.Assert.*;
 public class FuncionarioServiceTest {
     private FuncionarioService funcionarioService = new FuncionarioService();
     private List<Funcionario> funcionarios;
+
     @Before
     public void init() {
         funcionarios = new ArrayList<>(Arrays.asList(
@@ -35,25 +36,26 @@ public class FuncionarioServiceTest {
     public void finalize() {
         funcionarios.clear();
     }
+
     @Test
     public void testCadastrarFuncionario() {
-     funcionarioService.cadastrarFuncionario(new FuncionarioAssalariado("Matheus", "999999999999", 52, 2500.0));
-     assertEquals(5,funcionarios.size());
+        funcionarioService.cadastrarFuncionario(new FuncionarioAssalariado("Matheus", "999999999999", 52, 2500.0));
+        assertEquals(5, funcionarios.size());
     }
 
     @Test
     public void testCalcularValorHoraTrabalhada() {
-        assertEquals(funcionarioService.calcularValorHoraTrabalhada(funcionarios.get(3).getCpf()),funcionarioService.calcularValorHoraTrabalhada(funcionarios.get(3).getCpf()));
+        assertEquals(funcionarioService.calcularValorHoraTrabalhada(funcionarios.get(3).getCpf()), funcionarioService.calcularValorHoraTrabalhada(funcionarios.get(3).getCpf()));
     }
 
     @Test
-    public void testCalcularRendimentoMedio(){
-        assertEquals(new Double(7125.0),funcionarioService.calcularRendimentoMedio());
+    public void testCalcularRendimentoMedio() {
+        assertEquals(new Double(7125.0), funcionarioService.calcularRendimentoMedio());
     }
 
     @Test
     public void testCalcularRendimentosDeUmFuncionario() {
-        assertEquals(funcionarioService.listarTodosFuncionarios().get(0).getRendimentos(),funcionarioService.calcularRendimentosDeUmFuncionario(funcionarios.get(0).getCpf()));
+        assertEquals(funcionarioService.listarTodosFuncionarios().get(0).getRendimentos(), funcionarioService.calcularRendimentosDeUmFuncionario(funcionarios.get(0).getCpf()));
     }
 
 }
