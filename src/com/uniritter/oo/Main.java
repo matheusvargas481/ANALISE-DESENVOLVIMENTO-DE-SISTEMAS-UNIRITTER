@@ -23,7 +23,6 @@ public class Main {
 		Double salario;
 		Double valorHora;
 		Double vendasBrutas = null;
-		
 
 		while (escolhaMenu != 0) {
 			System.out.println("\nGerenciado de funcionarios");
@@ -75,9 +74,11 @@ public class Main {
 						salario = teclado.nextDouble();
 						System.out.println("Digite a comissao do funcionario: ");
 						comissao = teclado.nextDouble();
+						System.out.println("Digite as vendas do funcionario: ");
+						vendasBrutas = teclado.nextDouble();
 
-						funcionarioService.cadastrarFuncionario(
-								new FuncionarioComissionadoBaseSalario(nome, cpf, horasTrabalhadas, salario, comissao, vendasBrutas));
+						funcionarioService.cadastrarFuncionario(new FuncionarioComissionadoBaseSalario(nome, cpf,
+								horasTrabalhadas, salario, comissao, vendasBrutas));
 						break;
 
 					case 3:
@@ -90,6 +91,8 @@ public class Main {
 						horasTrabalhadas = teclado.nextInt();
 						System.out.println("Digite a comissao do funcionario: ");
 						comissao = teclado.nextDouble();
+						System.out.println("Digite as vendas do funcionario: ");
+						vendasBrutas = teclado.nextDouble();
 
 						funcionarioService.cadastrarFuncionario(
 								new FuncionarioComissionado(nome, cpf, horasTrabalhadas, comissao, vendasBrutas));
@@ -103,7 +106,8 @@ public class Main {
 						System.out.println("Digite o valor da Hora: ");
 						valorHora = teclado.nextDouble();
 
-						funcionarioService.cadastrarFuncionario(new FuncionarioHorista(nome, cpf, valorHora, horasTrabalhadas));
+						funcionarioService
+								.cadastrarFuncionario(new FuncionarioHorista(nome, cpf, valorHora, horasTrabalhadas));
 						break;
 					case 0:
 						System.out.println("Voltando!");
@@ -136,7 +140,6 @@ public class Main {
 			}
 
 		}
-
 
 	}
 }
