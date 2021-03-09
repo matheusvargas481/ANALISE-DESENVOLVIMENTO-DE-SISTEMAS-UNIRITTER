@@ -1,0 +1,53 @@
+#include <stdio.h>
+
+
+
+int main(void) {
+
+
+
+  int n;
+
+
+
+  printf("Digite o tamanho de uma matriz quadrada: ");
+
+  scanf("%d", &n);
+
+
+
+  int numero[n][n], i, j;
+
+
+
+  for(i=0; i < n; i++){
+
+    for(j=0; j < n; j++){
+
+      printf("Digte um numero na posicao de memoria (%d,%d):", i, j);
+
+      scanf("%d", &numero[i][j]);
+
+    }
+
+  }
+
+
+
+  for(i=0; i < n; i++){
+
+    for(j=0; j < n; j++){
+
+      if(       ){
+
+        printf("\nNumero na posicao de memoria (%d,%d): %d", i, j, numero[i][j]);
+
+      }
+
+    }
+
+  }
+
+
+
+}
