@@ -1,0 +1,4 @@
+Instruções
+Faça um algoritmo que armazena 5 valores do tipo double em um vetor e imprime a sequencia de bytes de memoria de cada valor armazenado.
+
+Faça representação da sequencia completa.

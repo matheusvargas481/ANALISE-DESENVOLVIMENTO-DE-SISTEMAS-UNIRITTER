@@ -1,0 +1,2 @@
+Instruções
+Baseado no codigo visto em sala aula, crie um função que faz o calculo da potencia de dois numeros e retorna o resultado em numeros reais, sem utilizar funcão do C, sem utilizar multiplicação e sem utilizar recursividade.
